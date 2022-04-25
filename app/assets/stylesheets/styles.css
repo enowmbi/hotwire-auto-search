@@ -1,16 +1,29 @@
 body{
-background: #333;
-color: #fff;
-font-weight: 800;
+    background: #333;
+    color: #fff;
+    font-size: 20px;
+}
+
+body a{
+    color: greenyellow;
+}
+
+body a:visited{
+    color: orange; 
 }
 
 main{
-  padding-left: 300px;
-  padding-right: 300px;
+    padding-left: 300px;
+    padding-right: 300px;
 }
 
- main input{
-  width: 100%;
-  margin-bottom: 30px;
- }
+main input{
+    width: 100%;
+    margin-bottom: 30px;
+    border-radius: 50px;
+    font-size: 20px;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
 
