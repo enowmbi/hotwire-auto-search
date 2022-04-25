@@ -1,0 +1,7 @@
+<h2>Search Results</h2>
+<%= @results.count %>
+<hr/>
+<% @results.each do |movie| %>
+  <br/>
+  <%= link_to(highlight(movie.title, params[:search_params]), movie) %>
+<% end %>
