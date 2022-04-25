@@ -4,6 +4,7 @@ class MoviesController < ApplicationController
   # GET /movies or /movies.json
   def index
     @movies = Movie.all
+    @results = []
   end
 
   # GET /movies/1 or /movies/1.json
@@ -13,6 +14,21 @@ class MoviesController < ApplicationController
   # GET /movies/new
   def new
     @movie = Movie.new
+  end
+
+  def search
+    @results = if params[:search_params].present?
+                Movie.search_by_title(params[:search_params])
+             else
+               [ ]
+             end
+    respond_to do |format|
+      format.turbo_stream do
+         render turbo_stream: [
+            turbo_stream.update("search_results", partial: "movies/search_results", locals: { results: @results })
+         ]
+      end
+    end
   end
 
   # GET /movies/1/edit

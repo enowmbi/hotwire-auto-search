@@ -9,3 +9,8 @@ main{
   padding-right: 300px;
 }
 
+ main input{
+  width: 100%;
+  margin-bottom: 30px;
+ }
+
