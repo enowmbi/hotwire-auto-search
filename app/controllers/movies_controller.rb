@@ -5,6 +5,8 @@ class MoviesController < ApplicationController
   def index
     @movies = Movie.all
     @results = []
+
+    @pagy, @records = pagy(@movies)
   end
 
   # GET /movies/1 or /movies/1.json

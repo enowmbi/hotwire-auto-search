@@ -11,12 +11,18 @@
   </div>
   <hr/>
   <div id="movies">
-    <% @movies.each do |movie| %>
+    <p>
+    <%== pagy_nav(@pagy) %>
+    </p>
+    <% @records.each do |movie| %>
       <%= render movie %>
       <p>
       <%= link_to "Show this movie", movie %>
       </p>
     <% end %>
+    <p>
+    <%== pagy_nav(@pagy) %>
+    </p>
   </div>
 
   <%= link_to "New movie", new_movie_path %>
